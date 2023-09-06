@@ -1,0 +1,36 @@
+General
+-------------
+- it is a best practive to version our api like v1 so it will look like http://localhost:8080/kalahagames
+- Format all the code
+- Method level java docs
+- What is the use of KalahaGameExceptionCode and GameUtil classes
+- I'm a little not sure to keep both model classes and Entity classes together in the same package. The moment i saw the repository package, i was looking for an entity package.
+
+GameController
+------------------
+- 22. rename the resource into plural noun like kalahagames.. there is a typo as well (kahala) 
+- 25. remove @Autowired. its not required
+- 32. http status code could be 201 - created
+- 35. rename the path variable from id to gameId to make it unonimous
+
+
+GameServiceImpl
+-----------------
+- 27. Pls remove @Autowired and test once.
+- 30. why @Override annotation is not used?
+- 34 - No need for arg DEFAULT_STONES. the same constant can directly be used like this >> kalahaPits.add(new KalahaPit(i, DEFAULT_STONES));
+- log msgs and error msgs could be more meaningful
+- 51 - the Cognitive Complexity seems to be high.. extract few logics into to separate private methods
+- 62 - make the method validatePitSelection return a boolean result and throw error here itself
+- 65 - i dont think selectedPit needs to be assigned to a variable as it is used only once.
+- 85 - put isNextPitOwn(kalahaGame, nextPitId) directly into if condition
+- looks like methods shouldGiveExtraTurn and shouldSkipOthersHousePit are the same.
+- method setWinner -  it is best practice to add a default case. here for case 0 maybe. 
+- methods addAllStonesToHouseIndex and isPlayersNonHousePitsEmpty - if checks should have equals method instead of == as it is Integer not int
+- In method addDefaultStones, the continue statement is neccessary?? if we simply add else block for kalahaPits.add(new KalahaPit(i, stones)); the loop will be executed as usual right?
+
+ 
+
+
+
+

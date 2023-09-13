@@ -5,7 +5,10 @@ New Comments:
 3. GameController > the condition (pitId > 6 && pitId < 8) can be made to pitId == 7 instead
 4. KahalaExceptionDetails is duplicated (kalaha & kahala)
 5. Not fixed - Empty KalahaGameExceptionCode and GameUtil classes. Pls remove
-6. Not fixed - GameController > rename the resource into plural noun like kalahagames.. there is a typo as well (kahala)
+6. Not fixed - GameController > rename the resource into plural noun like 
+    * kalahagames >>> create a game
+    * kalahagames/{id} >>> get game
+    * kalahagames/{id}/playgame >>> play game
 7. GameController > playGame method can at least have id in the resource
 8. the Cognitive Complexity seems to be still high.. extract few more logics (loops and conditions) into to separate private methods
 9. Not fixed - GameServiceImpl > in method setWinner -  add a default case for case 0. 
